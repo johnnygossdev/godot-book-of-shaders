@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://shaders/getting_started/hello_world.shader" type="Shader" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://shaders/getting_started/uniforms.shader" type="Shader" id=3]
+[ext_resource path="res://Uniforms.gd" type="Script" id=4]
+[ext_resource path="res://shaders/getting_started/algorithmic_drawing.shader" type="Shader" id=5]
+[ext_resource path="res://shaders/getting_started/colors.shader" type="Shader" id=6]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/color = Color( 1, 0.188235, 0.188235, 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 3 )
+shader_param/u_position = null
+shader_param/u_size = null
+shader_param/u_resolution_screen = null
+shader_param/u_mouse_screen = null
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 5 )
+shader_param/PI = 3.14159
+shader_param/u_position = null
+shader_param/u_size = null
+shader_param/u_resolution_screen = null
+shader_param/u_mouse_screen = null
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 6 )
+shader_param/PI = 3.14159
+shader_param/u_position = null
+shader_param/u_size = null
+shader_param/u_resolution_screen = null
+shader_param/u_mouse_screen = null
+shader_param/colorA = Vector3( 1, 0.5, 0.6 )
+shader_param/colorB = Vector3( 0, 0.2, 0.4 )
+
+[node name="Shaders" type="Node"]
+
+[node name="GettingStarted" type="Node2D" parent="."]
+
+[node name="HelloWorld" type="Sprite" parent="GettingStarted"]
+material = SubResource( 1 )
+position = Vector2( 471, 253 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Uniforms" type="Sprite" parent="GettingStarted"]
+material = SubResource( 2 )
+position = Vector2( 610, 250 )
+texture = ExtResource( 2 )
+centered = false
+script = ExtResource( 4 )
+
+[node name="AlgorithmicDrawing" type="Sprite" parent="GettingStarted"]
+material = SubResource( 3 )
+position = Vector2( 740, 250 )
+texture = ExtResource( 2 )
+centered = false
+script = ExtResource( 4 )
+
+[node name="Colors" type="Sprite" parent="GettingStarted"]
+material = SubResource( 4 )
+position = Vector2( 873.71, 250 )
+texture = ExtResource( 2 )
+centered = false
+script = ExtResource( 4 )
